@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta > 
+  <title>LIS Course Materials</title>
+  <link rel="stylesheet" href="v1.css">
+</head>
+<body>
+
+<!-- The header section -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="images/tasued.jpeg" alt="tasued logo">
+      <h2>
+        Tasued
+        <span style="color:#e224f3">
+          <abbr title="Library and Information Science">LIS</abbr>
+        </span>
+        Course materials
+      </h2>
+    </div>
+
+    <!-- Navigation links -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#pq">Past Questions</a></li>
+        <li><a href="#author">Author/Contact</a></li>
+        <li><a href="#project">Author's Projects</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="toggle-menu">&#9776;</button>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1>"Empower Your Learning Journey"
+        by <a href="https://wa.me/2349063632057" target="_blank">Sen. Adeyemi Quyum Adekunle</a> and LIS Executives.
+      </h1>
+      <p>
+        This website is mainly for LIS department students to access their course materials easily
+        and enhance their academic performance. It covers all 100L to 400L course materials,
+        including past questions.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn-primary" href="lis lecturers.html">Meet LIS Lecturers</a>
+        <a class="btn-primary" onclick="showPopup()">Meet Student Executives</a>
+      </div>
+    </div>
+<style>
+    /* Hidden by default */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .popup-content h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .popup-content p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .popup-content a {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .popup-content a:hover {
+      background-color: #0056b3;
+    }
+
+    .close-btn {
+      display: block;
+      margin-top: 15px;
+      color: #999;
+      cursor: pointer;
+    }
+  </style>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>🚧 Still on Maintenance</h2>
+      <p>This page is still under maintenance by <b>Senator Adeyemi Quyum Adekunle</b>.</p>
+      <a href="https://wa.me/2349063632057" target="_blank">Message Me</a>
+      <span class="close-btn" onclick="closePopup()">Close</span>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+    
+  </section>
+
+  <!-- Circle Button Section -->
+  <section class="check-materials" id="materials">
+    <h2>Available Course Materials !!</h2>
+    <p>Click the "circle" below to access all available materials from 100-Level to 400-Level.</p>
+
+    <div class="circle-section">
+      <button class="circle-btn" id="materialBtn">
+        <h3>View Materials!!</h3>
+      </button>
+    </div>
+
+    <style>
+      .circle-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background: #000;
+        border-radius: 50%;
+        box-shadow: 3px 3px 8px #e224f3;
+      }
+
+      .circle-btn {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #fff, #e224f3);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+
+      /* Shake animation */                                        
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-10px); }
+        40%, 80% { transform: translateX(10px); }
+      }
+      @media(min-width:1200px){
+        .circle-section{
+          border-radius:20%;
+        }
+        .circle-btn{
+          box-shadow:0px 3px 8px #fff;
+        }
+      }
+
+      .shake {
+        animation: shake 0.8s ease;
+      }
+
+      /* Hover effect */
+      .circle-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .check-materials h2 {
+        color: #e224f3;
+        border-top: 3px dashed #000;
+        padding-top: 15px;
+        text-align: center;
+      }
+
+      .check-materials p {
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      const circleBtn = document.getElementById('materialBtn');
+
+      // Detect when the circle enters the viewport
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            circleBtn.classList.add('shake');
+            setTimeout(() => {
+              circleBtn.classList.remove('shake');
+            }, 1000);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(circleBtn);
+
+      // Redirect when clicked
+      circleBtn.addEventListener('click', () => {
+        window.location.href = "materials.html";
+      });
+    </script>
+  </section>
+
+  <!-- Past Question Section -->
+  <section id="pq" class="course-material">
+    <div class="container">
+      <h2>Past Questions</h2>
+      <div class="materials-grid">
+        <div class="material-box">
+          <h3>LIS 100L Past Materials</h3>
+          <p>Click the button below to view 100L past questions</p>
+          <div class="buttons-box">
+            <a href="year1.html" class="Primary-btn">View</a>
+          </div>
+        </div>
+
+        <div class="material-box">
+          <h3>LIS 200L Past Materials</h3>
+          <p>Click the button below to view 200L past questions</p>
+          <div class="buttons-box">
+            <a href="year2.html" class="Primary-btn">View</a>
+          </div>
+        </div>
+
+        <div class="material-box">
+          <h3>LIS 300L Past Materials</h3>
+          <p>Click the button below to view 300L past questions</p>
+          <div class="buttons-box">
+            <a href="year3.html" class="Primary-btn">View</a>
+          </div>
+        </div>
+
+        <div class="material-box">
+          <h3>LIS 400L Past Materials</h3>
+          <p>Click the button below to view 400L past questions</p>
+          <div class="buttons-box">
+            <a href="year4.html" class="Primary-btn">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="author" class="contact">
+    <div class="container">
+      <h2 class="contact-h2">Meet!! Sen. Adeyemi Quyum Adekunle</h2>
+      <div class="image-container">
+      <img src="images/quyum.jpg" alt="Sen Quyum" /></div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p><strong>Phone Numbers:</strong> 09063632057 / 09036072911..</p>
+          <a href="https://wa.me/2349063632057"target="_blank" class="message">Message Me</a>
+          <p><strong>Email:</strong>
+            <a href="mailto:abdulqoyum246@gmail.com">abdulqoyum246@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <form action="#" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="telephone" placeholder="Your Phone Number" required>
+        <textarea name="message" placeholder="Your Message Here" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container footer-container">
+    <p>&copy; 2025 LIS Course Program. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Services</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

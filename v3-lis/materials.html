@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELISE Materials Portal</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2rem;
+      color: #e224f3;
+    }
+
+    p {
+      padding: 15px;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .levels, .semesters {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    button {
+      background: #e224f3;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 200px;
+      transition: 0.3s;
+      font-weight: 700;
+    }
+
+    button:hover {
+      background: #000;
+      transform: scale(1.05);
+    }
+
+    .course-card {
+      background: white;
+      width: 90%;
+      max-width: 500px;
+      margin: 15px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      padding: 10px;
+    }
+
+    .course-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .course-code {
+      font-weight: bold;
+      color: #e224f3;
+    }
+
+    .materials-list {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .materials-list a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      background: #f1f8ff;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .materials-list a:hover {
+      background: #dceeff;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      background: #000;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Available Course Materials</h1>
+  <p>
+    <strong>Support !! </strong> this Project by sending
+    <abbr title="Library and Information Science">LIS</abbr> materials:  
+    <a href="https://wa.me/2349063632057" target="_blank">+2349063632057</a>
+  </p>
+
+  <!-- LEVEL SELECTION -->
+  <div id="level-section" class="section active">
+    <h2>Select Your Level Here!</h2>
+
+    <div class="levels">
+      <button onclick="selectLevel('100')">100 Level</button>
+      <button onclick="selectLevel('200')">200 Level</button>
+      <button onclick="selectLevel('300')">300 Level</button>
+      <button onclick="selectLevel('400')">400 Level</button>
+    </div>
+  </div>
+
+  <!-- SEMESTER SELECTION -->
+  <div id="semester-section" class="section">
+    <h2>Which Semester?</h2>
+
+    <div class="semesters">
+      <button onclick="openMaterials('first')">First Semester</button>
+      <button onclick="openMaterials('second')">Second Semester</button>
+      <button class="back-btn" onclick="goBack('level')">⬅️ Back</button>
+    </div>
+  </div>
+
+  <!-- MATERIALS AREA -->
+  <div id="materials-section" class="section">
+    <h2 id="materials-title"></h2>
+    <div id="materials-container"></div>
+
+    <button class="back-btn" onclick="goBack('semester')">⬅️ Back</button>
+  </div>
+
+  <script>
+    let currentLevel = null;
+
+    /* ----------------------------------------
+        UNIVERSAL MATERIALS DATABASE
+        Supports BOTH:
+        - singleFile
+        - weeks[]
+    ----------------------------------------- */
+    const materialsData = {
+      "100": {
+        "first": [
+          {
+            code: "GST 111",
+            title: "Communication in English",
+            details: "2 Units | Compulsory",
+            singleFile: "doc/gst111.pdf",
+            weeks: []
+          },
+          {
+            code: "LIS 112",
+            title: "Basic Skills for Library Work",
+            details: "2 Units | Compulsory",
+            weeks: [
+              {title: "Full Note", file: "doc/lis112.pdf"}
+            ]
+          }
+        ],
+
+        "second": [
+          {
+            code: "CSC 124",
+            title: "Introduction to Computer Networking",
+            details: "2 Units | Elective",
+            singleFile: "doc/csc124.pdf",
+            weeks: []
+          }
+        ]
+      },
+
+      "200": {
+        "first": [
+          {
+            code: "EDT 211",
+            title: "Digital Photography and Editing",
+            details: "2 Units | Elective",
+            singleFile: "doc/edt211.pdf",
+            weeks: []
+          }
+        ],
+
+        "second": [
+          {
+            code: "LIS 223",
+            title: "Library Services to Rural Communities",
+            details: "2 Units | Compulsory",
+            weeks: [
+              {title: "Full Lecture Note", file: "doc/223.pdf"}
+            ]
+          }
+        ]
+      },
+
+      "300": {
+        "first": [
+          {
+            code: "LIS 311",
+            title: "Organisation of Knowledge 2",
+            details: "3 Units | Compulsory",
+            singleFile: "doc/lis311.pdf",
+            weeks: []
+          }
+        ],
+
+        "second": [
+          {
+            code: "LIS 302",
+            title: "Research Methods in LIS",
+            details: "2 Units | Compulsory",
+            singleFile: "materials/LIS302.pdf",
+            weeks: []
+          }
+        ]
+      },
+
+      "400": {
+        "first": [
+          {
+            code: "LIS 401",
+            title: "Library Management",
+            details: "3 Units | Compulsory",
+            singleFile: "materials/LIS401.pdf",
+            weeks: []
+          }
+        ],
+
+        "second": [
+          {
+            code: "LIS 402",
+            title: "Project and Seminar",
+            details: "6 Units | Compulsory",
+            weeks: [
+              {title: "Week 1 - Guidelines", file: "materials/LIS402-week1.pdf"},
+              {title: "Week 2 - Seminar Writing", file: "materials/LIS402-week2.pdf"}
+            ]
+          }
+        ]
+      }
+    };
+
+    /* ----------------------------------------
+        NAVIGATION FUNCTIONS
+    ----------------------------------------- */
+    function fadeSwitch(hideId, showId) {
+      document.getElementById(hideId).classList.remove("active");
+      document.getElementById(showId).classList.add("active");
+    }
+
+    function selectLevel(level) {
+      currentLevel = level;
+      fadeSwitch("level-section", "semester-section");
+    }
+
+    function goBack(section) {
+      if (section === "level") fadeSwitch("semester-section", "level-section");
+      else fadeSwitch("materials-section", "semester-section");
+    }
+
+    /* ----------------------------------------
+        MATERIAL DISPLAY LOGIC
+    ----------------------------------------- */
+    function openMaterials(semester) {
+      fadeSwitch("semester-section", "materials-section");
+
+      document.getElementById("materials-title").textContent =
+        `${currentLevel} Level - ${semester === "first" ? "First Semester" : "Second Semester"}`;
+
+      const container = document.getElementById("materials-container");
+      container.innerHTML = "";
+
+      const courses = materialsData[currentLevel][semester];
+
+      if (!courses || courses.length === 0) {
+        container.innerHTML = "<p>No materials available yet.</p>";
+        return;
+      }
+
+      courses.forEach(course => {
+        const card = document.createElement("div");
+        card.className = "course-card";
+
+        const id = course.code.replace(/\s/g, "");
+
+        // If course has weeks (multiple files)
+        if (course.weeks && course.weeks.length > 0) {
+          
+          let filesHTML = course.weeks
+            .map(w => `<a href="${w.file}" target="_blank">📘 ${w.title}</a>`)
+            .join("");
+
+          // If also has a singleFile
+          if (course.singleFile) {
+            filesHTML += `<a href="${course.singleFile}" target="_blank">📕 Full Material</a>`;
+          }
+
+          card.innerHTML = `
+            <div class="course-header" onclick="toggleMaterials('${id}', this)">
+              <div>
+                <div class="course-code">${course.code}</div>
+                <div class="course-title">${course.title}</div>
+                <div class="course-details">${course.details}</div>
+              </div>
+              <div class="arrow">▼</div>
+            </div>
+
+            <div id="${id}" class="materials-list">${filesHTML}</div>
+          `;
+
+        } 
+        // If no weeks, only single file
+        else if (course.singleFile) {
+          card.innerHTML = `
+            <a href="${course.singleFile}" target="_blank" style="text-decoration:none; color:inherit;">
+              <div class="course-header">
+                <div>
+                  <div class="course-code">${course.code}</div>
+                  <div class="course-title">${course.title}</div>
+                  <div class="course-details">${course.details}</div>
+                </div>
+              </div>
+            </a>
+          `;
+        }
+
+        container.appendChild(card);
+      });
+    }
+
+    function toggleMaterials(id, element) {
+      const list = document.getElementById(id);
+      const arrow = element.querySelector(".arrow");
+
+      if (list.style.display === "block") {
+        list.style.display = "none";
+        arrow.textContent = "▼";
+      } else {
+        list.style.display = "block";
+        arrow.textContent = "▲";
+      }
+    }
+  </script>
+
+</body>
+</html>
