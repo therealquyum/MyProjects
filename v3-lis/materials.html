@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ELISE Materials Portal</title>
+  
+  
+  
+  
+  
+  
+  
+  <!-- =====================  STYLING ================= -->
+  
+  
+  
+  
+  
 
   <style>
     body {
@@ -116,6 +129,23 @@
   </style>
 </head>
 
+
+
+
+
+
+
+
+
+
+<!--===================== AVAILABLE MATERIALS ======================== -->
+
+
+
+
+
+
+
 <body>
 
   <h1>Available Course Materials</h1>
@@ -124,8 +154,18 @@
     <abbr title="Library and Information Science">LIS</abbr> materials:  
     <a href="https://wa.me/2349063632057" target="_blank">+2349063632057</a>
   </p>
+  
+  
+  
+  
+  
 
-  <!-- LEVEL SELECTION -->
+  <!-- =======================  LEVEL SELECTION   ===========================-->
+  
+  
+  
+  
+  
   <div id="level-section" class="section active">
     <h2>Select Your Level Here!</h2>
 
@@ -137,7 +177,18 @@
     </div>
   </div>
 
-  <!-- SEMESTER SELECTION -->
+  
+  
+  
+  
+  
+  
+  <!-- ==========================  SEMESTER SELECTION =========================== -->
+  
+  
+  
+  
+  
   <div id="semester-section" class="section">
     <h2>Which Semester?</h2>
 
@@ -147,8 +198,18 @@
       <button class="back-btn" onclick="goBack('level')">⬅️ Back</button>
     </div>
   </div>
+  
+  
+  
+  
+  
 
-  <!-- MATERIALS AREA -->
+  <!-- =====================MATERIALS AREA =========================-->
+  
+  
+  
+  
+  
   <div id="materials-section" class="section">
     <h2 id="materials-title"></h2>
     <div id="materials-container"></div>
@@ -156,6 +217,17 @@
     <button class="back-btn" onclick="goBack('semester')">⬅️ Back</button>
   </div>
 
+  
+  
+  
+  <!-- ============================= SCRIPT 
+  =========================== -->
+  
+  
+  
+  
+  
+  
   <script>
     let currentLevel = null;
 
@@ -165,6 +237,9 @@
         - singleFile
         - weeks[]
     ----------------------------------------- */
+  
+  
+  
     const materialsData = {
       "100": {
         "first": [
@@ -175,6 +250,10 @@
             singleFile: "doc/gst111.pdf",
             weeks: []
           },
+        
+        
+        
+        
           {
             code: "LIS 112",
             title: "Basic Skills for Library Work",
@@ -185,6 +264,11 @@
           }
         ],
 
+        
+        
+        
+        
+        
         "second": [
           {
             code: "CSC 124",
@@ -195,9 +279,25 @@
           }
         ]
       },
+      
+      
+      
+      // =====================  200- level Materials
+      
+      
 
       "200": {
         "first": [
+
+
+
+         {
+            code: " GST 212",
+            title: "Philosophy, Logic, Environment and Sustainable development",
+            details: "2 Units | Elective",
+            singleFile: "doc/edt211.pdf",
+            weeks: []
+          },
           {
             code: "EDT 211",
             title: "Digital Photography and Editing",
@@ -207,6 +307,13 @@
           }
         ],
 
+        
+        
+        
+        
+        
+        
+        
         "second": [
           {
             code: "LIS 223",
@@ -218,6 +325,12 @@
           }
         ]
       },
+      
+      
+      
+      
+      
+      
 
       "300": {
         "first": [
@@ -227,48 +340,325 @@
             details: "3 Units | Compulsory",
             singleFile: "doc/lis311.pdf",
             weeks: []
-          }
-        ],
-
-        "second": [
+          },
+        
+        
+        
           {
-            code: "LIS 302",
-            title: "Research Methods in LIS",
+            code: "LIS 312",
+            title: "Collection Management",
             details: "2 Units | Compulsory",
-            singleFile: "materials/LIS302.pdf",
+            singleFile: "doc/lis 312.pdf",
+            weeks: []
+          },
+
+
+          
+          {
+            code: "LIS 313",
+            title: "Reference and Information Services in LIS",
+            details: "2 Units | Compulsory",
+            singleFile: "doc/lis 313.pdf",
+            weeks: []
+          },
+
+           
+          {
+            code: "LIS 315",
+            title: "Information Technologies and data Security",
+            details: "2 Units | Required",
+            singleFile: "doc/lis 315.pdf",
+            weeks: []
+          },
+
+
+
+           
+          {
+            code: "LIS 316",
+            title: "Library Environment and Buidings",
+            details: "2 Units | Compulsory",
+            singleFile: "doc/lis 316.pdf",
+            weeks: []
+          },
+
+
+           
+          {
+            code: "LIS 317",
+            title: "Library System and Services",
+            details: "2 Units | Elective",
+            singleFile: "doc/lis 317.pdf",
             weeks: []
           }
+        
+        ],
+
+        
+        
+        
+        
+        
+        
+        "second": [
+          {
+            code: "TASUED CSC - 320",
+            title: "Mobile Application Development",
+            details: "2 Units | Elective",
+            singleFile: "doc/csc 320.pdf",
+            weeks: []
+          },
+
+
+           {
+            code: "TASUED EDT - 322",
+            title: "Mobile Apps and Software Development",
+            details: "2 Units | Elective",
+            singleFile: "doc/edt 322.pdf",
+            weeks: []
+          },
+
+
+
+            {
+            code: "LIS 322",
+            title: "Hardware and Software Technologies",
+            details: "2 Units |Compulsary",
+            singleFile: "doc/lis 322.pdf",
+            weeks: []
+          },
+
+
+
+          {
+            code: "LIS 323",
+            title: "Knowledge Management",
+            details: "2 Units |Compulsary",
+            singleFile: "doc/lis 323.pdf",
+            weeks: []
+          },
+
+
+
+
+          {
+            code: "LIS 325",
+            title: "Information Science",
+            details: "2 Units |Compulsary",
+            singleFile: "doc/lis 325.pdf",
+            weeks: []
+          },
+
+
+
+          {
+            code: "LIS 326",
+            title: "Research  and Statistical Methods in LIS",
+            details: "2 Units |Compulsary",
+            singleFile: "doc/lis 326.pdf",
+            weeks: []
+          },
+
+
+          {
+            code: "LIS 327",
+            title: "Information Management and Marketing",
+            details: "2 Units |Compulsary",
+            singleFile: "doc/lis 327.pdf",
+            weeks: []
+          },
+
+
+
+          {
+            code: "LIS 329",
+            title: "SIWES",
+            details: "6 Units |Compulsary",
+            singleFile: "doc/lis 329.pdf",
+            weeks: []
+          },
+
+
+
+
+          
         ]
       },
 
+      
+      
+      
+      
+      
       "400": {
         "first": [
+
+         {
+            code: "LIS 413",
+            title: "Indexing and Abstracting",
+            details: "2 Units | Compulsory",
+            weeks: [
+              {title: "Week 1", file: "doc/lis 413 w1.pdf"},
+              {title: "Week 2", file: "doc/lis 413 w2.pdf"}
+            ]
+          },
+
+
+
+
+
           {
-            code: "LIS 401",
-            title: "Library Management",
-            details: "3 Units | Compulsory",
-            singleFile: "materials/LIS401.pdf",
+            code: "LIS 416",
+            title: "Archives Administration and Records Management",
+            details: "2 Units | Compulsory",
+            singleFile: "doc/lis 416.pdf",
             weeks: []
-          }
+          },
+
+
+
+
+             {
+            code: "LIS 417",
+            title: "Publishing, Book Production and Trade",
+            details: "2 Units | Compulsory",
+            singleFile: "doc/lis 417.pdf",
+            weeks: []
+          },
+
+             {
+            code: "LIS 418",
+            title: "Preservation, Conservation and Security of Library and Infomation Resources",
+            details: "2 Units | Compulsory",
+            singleFile: "doc/lis 418.pdf",
+            weeks: []
+          },
+
+          
+
+
+          
         ],
 
+        
+        
+        
+        
+        
         "second": [
           {
-            code: "LIS 402",
-            title: "Project and Seminar",
-            details: "6 Units | Compulsory",
+            code: "LIS 421",
+            title: "Databases Design and Management",
+            details: "2 Units | Compulsory",
             weeks: [
-              {title: "Week 1 - Guidelines", file: "materials/LIS402-week1.pdf"},
-              {title: "Week 2 - Seminar Writing", file: "materials/LIS402-week2.pdf"}
+              {title: "Week 1", file: "doc/lis 421 w1.pdf"},
+              {title: "Week 2", file: "doc/lis 421 w2.pdf"}
             ]
-          }
+          },
+
+
+
+
+
+
+          {
+            code: " TASUED LIS 422",
+            title: "Library Administration",
+            details: "2 Units | Required",
+            singleFile: "doc/lis 422.pdf",
+            weeks: []
+          },
+
+
+
+
+
+            {
+            code: "LIS 423",
+            title: "Infopreneurship",
+            details: "2 Units | Compulsory",
+            singleFile: "doc/lis 423.pdf",
+            weeks: []
+          },
+
+
+
+
+
+            {
+            code: "LIS 424",
+            title: "Research Project",
+            details: "6 Units | Compulsory",
+            singleFile: "doc/lis 424.pdf",
+            weeks: []
+          },
+
+
+
+
+
+            {
+            code: " TASUED LIS 425",
+            title: "Internet Infomation Resources",
+            details: "2 Units | Required",
+            singleFile: "doc/lis 425.pdf",
+            weeks: []
+          },
+
+
+
+
+
+
+            {
+            code: " TASUED LIS 426",
+            title: "Emerging Technologies In Libraries",
+            details: "2 Units | Elective",
+            singleFile: "doc/lis 426.pdf",
+            weeks: []
+          },
+
+
+
+
+
+
+            {
+            code: "TASUED LIS 427",
+            title: "Introduction to Information Ethics",
+            details: "2 Units | Elective",
+            singleFile: "doc/lis 427.pdf",
+            weeks: []
+          },
+
+
+
+            {
+            code: " TASUED LIS 428",
+            title: "Management Theories and Application in Libraries and Information Centres",
+            details: "2 Units | Required",
+            singleFile: "doc/lis 428.pdf",
+            weeks: []
+          },
         ]
       }
     };
+  
+  
+  
+  
+  
 
     /* ----------------------------------------
         NAVIGATION FUNCTIONS
     ----------------------------------------- */
+  
+  
+  
+  
+  
+  
+  
     function fadeSwitch(hideId, showId) {
       document.getElementById(hideId).classList.remove("active");
       document.getElementById(showId).classList.add("active");
@@ -283,10 +673,22 @@
       if (section === "level") fadeSwitch("semester-section", "level-section");
       else fadeSwitch("materials-section", "semester-section");
     }
+  
+  
+  
+  
+  
+  
 
     /* ----------------------------------------
         MATERIAL DISPLAY LOGIC
     ----------------------------------------- */
+  
+  
+  
+  
+  
+  
     function openMaterials(semester) {
       fadeSwitch("semester-section", "materials-section");
 
@@ -309,18 +711,39 @@
 
         const id = course.code.replace(/\s/g, "");
 
-        // If course has weeks (multiple files)
+        
+        
+        
+        
+        
+        
+        // ================= If course has weeks (multiple files)
+        
+        
+        
+        
+        
         if (course.weeks && course.weeks.length > 0) {
           
           let filesHTML = course.weeks
             .map(w => `<a href="${w.file}" target="_blank">📘 ${w.title}</a>`)
             .join("");
+          
+          
+          
+          
+          
+          
 
-          // If also has a singleFile
+          // ================  If also has a singleFile
+          
+          
+          
+          
+          
           if (course.singleFile) {
             filesHTML += `<a href="${course.singleFile}" target="_blank">📕 Full Material</a>`;
           }
-
           card.innerHTML = `
             <div class="course-header" onclick="toggleMaterials('${id}', this)">
               <div>

@@ -736,7 +736,7 @@ th,td{
 
 .contact-info h3 {
   color: #e224f3;
-  margin-bottom: 15px;
+  margin-bottom: 15px auto;
 }
 
 .contact-info p {
