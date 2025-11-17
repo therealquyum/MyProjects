@@ -14,6 +14,7 @@
     --light-text:#666;
     --bg-color:#fff;
     --white:#fff;
+    --team-color:#e224f3;
 
     --max-width:1200px;
     --section-padding:80px 40px;
@@ -381,7 +382,8 @@ padding-bottom: 20px;
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
   font-weight: 600;
-  text-decoration: none
+  text-decoration: none;
+    text-align:center;
 }
 
 .btn-primary {
@@ -520,12 +522,21 @@ padding-bottom: 20px;
 
 
  .back-btn{
-  color: rgb(255, 0, 13);
+  color:#fff;
   display:inline-block;
   font-weight: 600;
   margin: 15px;
-  background-color: #01050c;
-  padding: 5px;
+  background-color: #e224f3;
+  padding:10px 20px;
+     border-radius: 16px;
+     box-shadow: 0 3px 5px #000
+     
+ }
+.back-btn:hover{
+
+     transform: translatex(-5px);
+    background: #fff;
+    color:#e224f3;
 }
 
 
@@ -587,9 +598,10 @@ th,td{
 
 #team h2 {
   font-size: 2rem;
-  color: var(--primary-color, #0d6efd);
+  color: var(--team-color, #0d6efd);
   margin-bottom: 0.5rem;
   text-align: center;
+    
 }
 
 #team p {
@@ -616,7 +628,7 @@ th,td{
   background: #f8f9fa;
   border-radius: 12px;
   padding: 1.25rem;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 3px 12px var(--team-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
@@ -648,9 +660,12 @@ th,td{
   display: inline-block;
   margin-top: 0.4rem;
   text-decoration: none;
-  color: var(--primary-color, #0d6efd);
+  color: var(--team-color, #0d6efd);
   font-weight: 600;
   font-size: 0.95rem;
+    padding: 5px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.5)
 }
 
 .team-member a:hover {
@@ -914,7 +929,7 @@ footer p {
   }
 }
 .contact-info .message{
-  border:2px solid #000;
+    box
 background: #e224f3;
   padding: 10px;
   font-weight: 800;
