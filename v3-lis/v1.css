@@ -431,7 +431,9 @@ padding-bottom: 20px;
     flex-direction: column;
   }
 }
-
+.buttons-box a{
+    color:#e224f3
+}
 
 
 /* FEATURES SECTION */
@@ -628,7 +630,7 @@ th,td{
   background: #f8f9fa;
   border-radius: 12px;
   padding: 1.25rem;
-  box-shadow: 0 3px 12px var(--team-color);
+  box-shadow: 0 0px 8px var(--team-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
