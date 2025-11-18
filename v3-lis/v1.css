@@ -824,7 +824,7 @@ th,td{
 }
 
 .social-links a.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% r107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
 .social-links a.tiktok {
@@ -931,7 +931,7 @@ footer p {
   }
 }
 .contact-info .message{
-    box
+    box-shadow: 4px #000;
 background: #e224f3;
   padding: 10px;
   font-weight: 800;
