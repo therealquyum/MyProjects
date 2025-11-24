@@ -431,9 +431,12 @@ padding-bottom: 20px;
     flex-direction: column;
   }
 }
-.buttons-box a{
-    color:#e224f3
-}
+
+.buttons-box a{
+
+    color:#e224f3
+
+}
 
 
 /* FEATURES SECTION */
@@ -864,7 +867,7 @@ th,td{
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #e224f3d;
+  background: #e224f3;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -872,7 +875,7 @@ th,td{
 }
 
 .contact-form button:hover {
-  background: #00p;
+  background: #000;
 }
 
 /* RESPONSIVE CONTACT */
