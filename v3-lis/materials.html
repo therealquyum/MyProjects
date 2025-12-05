@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ELISE Materials Portal</title>
+  
+  
+  
+  
+  
+  
+  
+  <!-- =====================  STYLING ================= -->
+  
+  
+  
+  
+  
 
   <style>
     body {
@@ -104,15 +117,6 @@
       background: #dceeff;
     }
 
-    .viewer {
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 100%;
-      height: 500px;
-      display: none;
-    }
-
     .back-btn {
       margin-top: 20px;
       background: #000;
@@ -124,6 +128,24 @@
     }
   </style>
 </head>
+
+
+
+
+
+
+
+
+
+
+<!--===================== AVAILABLE MATERIALS ======================== -->
+
+
+
+
+
+
+
 <body>
 
   <h1>Available Course Materials</h1>
@@ -132,9 +154,21 @@
     <abbr title="Library and Information Science">LIS</abbr> materials:  
     <a href="https://wa.me/2349063632057" target="_blank">+2349063632057</a>
   </p>
+  
+  
+  
+  
+  
 
+  <!-- =======================  LEVEL SELECTION   ===========================-->
+  
+  
+  
+  
+  
   <div id="level-section" class="section active">
     <h2>Select Your Level Here!</h2>
+
     <div class="levels">
       <button onclick="selectLevel('100')">100 Level</button>
       <button onclick="selectLevel('200')">200 Level</button>
@@ -143,25 +177,70 @@
     </div>
   </div>
 
+  
+  
+  
+  
+  
+  
+  <!-- ==========================  SEMESTER SELECTION =========================== -->
+  
+  
+  
+  
+  
   <div id="semester-section" class="section">
     <h2>Which Semester?</h2>
+
     <div class="semesters">
       <button onclick="openMaterials('first')">First Semester</button>
       <button onclick="openMaterials('second')">Second Semester</button>
       <button class="back-btn" onclick="goBack('level')">⬅️ Back</button>
     </div>
   </div>
+  
+  
+  
+  
+  
 
+  <!-- =====================MATERIALS AREA =========================-->
+  
+  
+  
+  
+  
   <div id="materials-section" class="section">
     <h2 id="materials-title"></h2>
     <div id="materials-container"></div>
+
     <button class="back-btn" onclick="goBack('semester')">⬅️ Back</button>
   </div>
 
+  
+  
+  
+  <!-- ============================= SCRIPT 
+  =========================== -->
+  
+  
+  
+  
+  
+  
   <script>
     let currentLevel = null;
 
-const materialsData = {
+    /* ----------------------------------------
+        UNIVERSAL MATERIALS DATABASE
+        Supports BOTH:
+        - singleFile
+        - weeks[]
+    ----------------------------------------- */
+  
+  
+  
+    const materialsData = {
       "100": {
         "first": [
           {
@@ -178,11 +257,8 @@ const materialsData = {
             code: "GST 112",
             title: "Nigeria People and Culture",
             details: "2 Units | Compulsory",
-            // singleFile: "doc/gst 112.pdf",
-            weeks: [
- {title: "Note 1", file: "doc/gns 113 -1.pdf"},
-          
-            ]
+            singleFile: "doc/gst 112.pdf",
+            weeks: []
           },
 
 
@@ -194,7 +270,7 @@ const materialsData = {
             details: "2 Units | Required",
             // singleFile: "doc/gns 113.pdf",
             weeks: [
-              {title: "Note 1", file: "doc/gns 113.pdf"},
+              {title: "Note 1", file: "doc/gns 113 -1.pdf"}
             ]
           },
         
@@ -219,7 +295,10 @@ const materialsData = {
             title: "Basic Skills for Library Work",
             details: "2 Units | Compulsory",
             weeks: [
-              {title: "Note", file: "doc/lis 112.pdf"},
+              {title: "Note", file: "doc/lis 112.pdf"},
+            
+            
+  {title: "Note 4", file: "doc/lis 112 n4.pdf"},
             ]
           },
 
@@ -232,9 +311,7 @@ const materialsData = {
             title: "Introduction to Library and Information Profession",
             details: "2 Units | Required",
             singleFile: "doc/Lis 113.pdf",
-            weeks: [
-               {title: "Note 1", file: "doc/Lis 113.pdf"}
-            ]
+            weeks: []
           },
 
 
@@ -297,10 +374,10 @@ const materialsData = {
             code: " TASUED EDT 122",
             title: "Principles of Public Relations in Media Communication",
             details: "2 Units | Elective",
-            // singleFile: "doc/edt 122.pdf",
+            singleFile: "doc/edt 122.pdf",
             weeks: [
               // {title: "Note 1", file: "doc/lis125.pdf"},
-              {title: "Note 2", file: "doc/edt 122 n2.pdf"},
+              {title: "Note 2", file: "doc/edt 122 n2.pdf"}
             ]
           },
 
@@ -458,7 +535,7 @@ const materialsData = {
             code: "LIS 214",
             title: "Management of Library and Information Centres",
             details: "2 Units | compulsary",
-            // singleFile: "doc/lis 214.pdf",
+            singleFile: "doc/lis 214.pdf",
             weeks: [
               {title: "Note 2", file: "doc/lis 214 n2.pdf"},
               {title: "Note 3", file: "doc/lis 214 n3.pdf"}
@@ -947,7 +1024,22 @@ const materialsData = {
         ]
       }
     };
+  
+  
+  
+  
+  
 
+    /* ----------------------------------------
+        NAVIGATION FUNCTIONS
+    ----------------------------------------- */
+  
+  
+  
+  
+  
+  
+  
     function fadeSwitch(hideId, showId) {
       document.getElementById(hideId).classList.remove("active");
       document.getElementById(showId).classList.add("active");
@@ -962,7 +1054,22 @@ const materialsData = {
       if (section === "level") fadeSwitch("semester-section", "level-section");
       else fadeSwitch("materials-section", "semester-section");
     }
+  
+  
+  
+  
+  
+  
 
+    /* ----------------------------------------
+        MATERIAL DISPLAY LOGIC
+    ----------------------------------------- */
+  
+  
+  
+  
+  
+  
     function openMaterials(semester) {
       fadeSwitch("semester-section", "materials-section");
 
@@ -985,12 +1092,39 @@ const materialsData = {
 
         const id = course.code.replace(/\s/g, "");
 
-        // If course has weeks
+        
+        
+        
+        
+        
+        
+        // ================= If course has weeks (multiple files)
+        
+        
+        
+        
+        
         if (course.weeks && course.weeks.length > 0) {
+          
           let filesHTML = course.weeks
-            .map((w, index) => `<a href="#" onclick="showViewer('${id}-viewer', '${w.file}'); return false;">📘 ${w.title}</a>`)
+            .map(w => `<a href="${w.file}" target="_blank">📘 ${w.title}</a>`)
             .join("");
+          
+          
+          
+          
+          
+          
 
+          // ================  If also has a singleFile
+          
+          
+          
+          
+          
+          if (course.singleFile) {
+            filesHTML += `<a href="${course.singleFile}" target="_blank">📕 Full Material</a>`;
+          }
           card.innerHTML = `
             <div class="course-header" onclick="toggleMaterials('${id}', this)">
               <div>
@@ -1001,10 +1135,22 @@ const materialsData = {
               <div class="arrow">▼</div>
             </div>
 
-            <div id="${id}" class="materials-list">
-              ${filesHTML}
-              <object id="${id}-viewer" class="viewer" type="application/pdf" data=""></object>
-            </div>
+            <div id="${id}" class="materials-list">${filesHTML}</div>
+          `;
+
+        } 
+        // If no weeks, only single file
+        else if (course.singleFile) {
+          card.innerHTML = `
+            <a href="${course.singleFile}" target="_blank" style="text-decoration:none; color:inherit;">
+              <div class="course-header">
+                <div>
+                  <div class="course-code">${course.code}</div>
+                  <div class="course-title">${course.title}</div>
+                  <div class="course-details">${course.details}</div>
+                </div>
+              </div>
+            </a>
           `;
         }
 
@@ -1024,13 +1170,7 @@ const materialsData = {
         arrow.textContent = "▲";
       }
     }
-
-    function showViewer(viewerId, file) {
-      const viewer = document.getElementById(viewerId);
-      viewer.setAttribute("data", file);
-      viewer.style.display = "block";
-      viewer.scrollIntoView({behavior: "smooth"});
-    }
   </script>
+
 </body>
 </html>
