@@ -32,13 +32,13 @@
   
   
   
-<header>
+<header id="TOP">
   
   <div class="container">
     
     <div class="logo">
       <a href="https://v4.tasued.edu.ng" target="_blank"><img src="images/tasued.jpeg" alt="tasued logo"></a>
-      <h2> Tasued <span style="color:#e224f3">
+      <h2> Tasued <span style="color:#fff">
           <abbr title="Library and Information Science">LIS</abbr>
         </span> <i class="fa-solid fa-book"></i> Materials For All Levels .... </h2>
     </div>
@@ -52,8 +52,8 @@
     <nav>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#materials"> Course Materials</a></li>
-        <li><a href="#pq"> Check Past Questions</a></li>
+      <li><a href="#materials">View Materials</a></li>
+        <li><a href="#pq"> Past Questions</a></li>
         <li><a href="#author">Author/Contact</a></li>
         <li><a href="#project">Quyum's Projects</a></li>
       </ul>
@@ -99,7 +99,7 @@
   <section id="hero" class="hero">
     <div class="container">
       <h1>"Empower Your Learning Journey"
-        by <a href="https://wa.me/2349063632057" target="_blank">Sen.Quyum Adekunle Adeyemi</a> and LIS Executives.
+        by <a href="https://wa.me/2349063632057" target="_blank"><span style="text-decoration:underline;">Sen.Quyum Adekunle Adeyemi</span></a> and LIS Executives.
       </h1>
       <p>
         This website is mainly for LIS department students to access their course materials easily
@@ -110,6 +110,11 @@
       <div class="hero-buttons">
         <a class="btn-primary" href="lis lecturers.html">Meet Lecturers <i class="fa-solid fa-chevron-right"></i></a>
         <a class="btn-primary" onclick="showPoup()">Meet Student Executives <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      <div class="container">
+        <button class="circle-top" id="materialBtn">
+        <h3>Read Now !!!</h3>
+      </button>
       </div>
       <!-- <div class="container">
         <img src="hero_image.jepeg" alt="hero image">
@@ -224,24 +229,46 @@
   
   
   <section class="check-materials" id="materials">
-    <h2>Available Course Materials !!</h2>
-    <p>Click the "circle" below to access all available materials from 100-Level to 400-Level.</p>
+    <h2>Motivational Qoutes</h2>
+    <p>Get Movtivated by Some powerful Qoutes Made Available to
+      you by Senator Adeyemi Quyum Adekunle.... .</p>
 
     <div class="circle-section">
-      <button class="circle-btn" id="materialBtn">
-        <h3>View Materials!!</h3>
-      </button>
+      <h2>1</h2>
+      
+        <h3>`Always  remember that "Success" is very  difficult to achieve most 
+          expecially at your "Comfort zone".`
+        </h3>
+        <button id="next_btn">Next</button>
     </div>
 
     <style>
       .circle-section {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 50vh;
         background: #000;
         border-radius: 50%;
         box-shadow: 3px 3px 8px #e224f3;
+      }
+      .circle-section h3{
+        color: var(--white);
+      }
+      .circle-top{
+        width: 180px;
+        height: 180px;
+        margin-top: 1rem;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #fff, #e224f3);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
       }
 
       .circle-btn {
@@ -327,7 +354,7 @@
   
   
 
-  <!-- =========== PAST QUESTION SECTION ============================= -->
+  <!-- =========== other resources ============================= -->
   
   
   
@@ -338,8 +365,8 @@
       <h2>Check Other Resources made availabe for you. <br><i class="fa-solid fa-arrow-down"></i></h2>
       <div class="materials-grid">
         <div class="material-box">
-          <h3>LIS 100L Past Materials</h3>
-          <p>Click the button below to view 100L past questions</p>
+          <h3>LIS Past Materials</h3>
+          <p>Click the button below to view past questions From 100 - 400 level</p>
          <button class="view-btn" onclick="showPopup()">
   <i class="fa-solid fa-eye"></i> View
 </button>
@@ -347,24 +374,24 @@
         </div>
 
         <div class="material-box">
-          <h3>LIS 200L Past Materials</h3>
-          <p>Click the button below to view 200L past questions</p>
+          <h3>Online Resources</h3>
+          <p>Click the button below to view </p>
          <button class="view-btn"onclick="showPopup()">
   <i class="fa-solid fa-eye"></i> View
 </button>
         </div>
 
         <div class="material-box">
-          <h3>LIS 300L Past Materials</h3>
-          <p>Click the button below to view 300L past questions</p>
+          <h3>Jornals</h3>
+          <p>Click the button below to view online Jornals</p>
      <button class="view-btn"onclick="showPopup()">
   <i class="fa-solid fa-eye"></i> View
 </button>
         </div>
 
         <div class="material-box">
-          <h3>LIS 400L Past Materials</h3>
-          <p>Click the button below to view 400L past questions</p>
+          <h3>Databases</h3>
+          <p>Click the button below to view </p>
         <button class="view-btn"onclick="showPopup()">
   <i class="fa-solid fa-eye"></i> View
 </button>
@@ -441,6 +468,9 @@
         <button type="submit" class="btn-primary">Send Message</button>
       </form>
     </div>
+  </section>
+  <section>
+    <a href="#TOP">BACK TO TOP</a>
   </section>
 </main>
   
