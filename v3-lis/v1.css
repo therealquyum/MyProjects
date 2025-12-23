@@ -29,6 +29,9 @@ body{
     background-color: var(--bg-color);
     line-height: 1.6;
 }
+main{
+  margin-top: 50px;
+}
 .back_to-top{
   text-align: center;
   background-color: #bf0ccf;
@@ -310,7 +313,7 @@ html{
 /* =============HERO SECTION============== */
 .hero {
   position: relative;
-  height: 130vh;
+height: 170vh;
   background: url('images/quyum.jpg') center/cover no-repeat ;
   display: flex;
   /* flex-direction: column; */
@@ -318,7 +321,7 @@ html{
   align-items: center;
   text-align: center;
   color: #c21697;
-  padding: 0 1rem;
+  padding:0 1rem;
   overflow: hidden;
 }
 
