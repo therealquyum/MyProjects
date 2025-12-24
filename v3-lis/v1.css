@@ -121,7 +121,7 @@ nav ul li a:hover{
 /* Hamburger button */
 .menu-toggle {
   display: none;
-  font-size: 26px;
+  font-size: 16px;
   background:#fff;
   border: none;
   color:#bf0ccf;
@@ -344,6 +344,7 @@ height: 100vh;
   font-weight: 700;
   color: #fcebfc;
   box-shadow: 2px 2px 5px black;
+  background-color: rgba(0, 0, 0, 0.55);
   
 }
 
