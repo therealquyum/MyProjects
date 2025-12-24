@@ -501,6 +501,100 @@ padding-bottom: 20px;
 .materials-page{
             background-color:#c21697;
         }
+
+
+
+
+
+
+
+
+
+/*============= circle section ========================*/
+
+
+
+      .circle-section {
+       display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        background: #000;
+        border-radius: 50%;
+        text-align: center;
+        box-shadow: 3px 3px 8px #e224f3;
+      }
+      .circle-section h3{
+        color: var(--white);
+      }
+      .circle-top{
+        width: 180px;
+        height: 180px;
+        margin-top: 1rem;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #fff, #e224f3);
+        color: white;
+        font-size:1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+
+      .circle-btn {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #fff, #e224f3);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+
+      /* Shake animation */                                        
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-10px); }
+        40%, 80% { transform: translateX(10px); }
+      }
+      @media(min-width:1200px){
+        .circle-section{
+          border-radius:70%;
+        }
+        .circle-btn{
+          box-shadow:0px 3px 8px #fff;
+        }
+      }
+
+      .shake {
+        animation: shake 0.8s ease;
+      }
+
+/* Hover effect */
+      .circle-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .check-materials h2 {
+        color: #e224f3;
+        border-top: 3px dashed #000;
+        padding-top: 15px;
+        text-align: center;
+      }
+
+      .check-materials p {
+        text-align: center;
+          color:#e224f3
+          
+      }
+
         /* table{
           width:100%;
             max-width:1200px;
