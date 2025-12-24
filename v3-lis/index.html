@@ -11,7 +11,11 @@
 <meta property="og:title" content="Click on this link to find and read any LIS materials of your choice across all level (100l- 400l) --- Sen Quyum wish everyone success in  all our examinations
 Noted: If you cant find the materials you need dm (09063632057) so as to update it to the platform ASAP. ">
 <meta property="og:description" content="Access well-organized course materials, stay academically ahead, and explore resources curated to support every Library and Information Science student. Powered by Sen. Adeyemi Quyum Adekunle.">
+<<<<<<< HEAD
 <meta property="og:image" content="https://www.v3-lis.netlify.app/images/tasued.jpeg">
+=======
+<meta property="og:image" content="https://v3-lis.netlify.app/images/quyum.jpg">
+>>>>>>> bc90c98d5b09154d1461831ee6852c79e639f68b
 <meta property="og:url" content="https://v3-lis.netlify.app">
 <meta property="og:type" content="website">
   
@@ -99,8 +103,8 @@ Noted: If you cant find the materials you need dm (09063632057) so as to update 
   
   <section id="hero" class="hero">
     <div class="container">
-      <h1>"Empower Your Learning Journey"
-        by <a href="https://wa.me/2349063632057" target="_blank"><span style="text-decoration:underline; color: #e224f3;">Sen.Quyum Adekunle Adeyemi</span></a> and LIS Executives.
+      <h1>"Empower Your Learning Journey" 
+       with <a href="https://wa.me/2349063632057" target="_blank"><span style="text-decoration:underline; color: #e224f3;">Sen.Quyum Adekunle Adeyemi</span></a> and LIS Executives.
       </h1>
       <!-- <p>
         This website is mainly for LIS department students to access their course materials easily
@@ -110,15 +114,17 @@ Noted: If you cant find the materials you need dm (09063632057) so as to update 
 
       <div class="container">
         <button class="circle-top" id="materialBtn">
-        <h3>Read Now !!! <i class="fa-solid fa-chevron-right"></i></h3>
+          <!-- <h3>Read Now !!! <i class="fa-solid fa-chevron-right"></i></h3>-->
+          <p>Read Now !! <i class="fa-solid fa-chevron-right"></i></p>
         
       </button>
-      <p>Click the circle button</p>
+      <p><a href="materials.html" class="back-btn"> <i class="fa-solid fa-chevron-up"></i> <br> Just one tap</a></p>
       </div>
 
       <div class="hero-buttons">
+        
+                      <a class="btn-primary" onclick="showPoup()">Lis Student Executives <i class="fa-solid fa-chevron-right"></i></a>
         <a class="btn-primary" href="lis lecturers.html">Meet Lecturers <i class="fa-solid fa-chevron-right"></i></a>
-        <a class="btn-primary" onclick="showPoup()">Meet Student Executives <i class="fa-solid fa-chevron-right"></i></a>
       </div>
       
       <!-- <div class="container">
@@ -235,7 +241,7 @@ Noted: If you cant find the materials you need dm (09063632057) so as to update 
   
   <section class="check-materials" id="materials">
     <h2>Motivational Qoutes</h2>
-    <p>Get Movtivated by Some powerful Qoutes Made Available to
+    <p>Get Motivated by Some powerful Qoutes Made Available to
       you by Senator Adeyemi Quyum Adekunle.... .</p>
 
     <div class="circle-section">
@@ -247,86 +253,9 @@ Noted: If you cant find the materials you need dm (09063632057) so as to update 
         <button id="next_btn">Next</button>
     </div>
 
-    <style>
-      .circle-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 50vh;
-        background: #000;
-        border-radius: 50%;
-        text-align: center;
-        box-shadow: 3px 3px 8px #e224f3;
-      }
-      .circle-section h3{
-        color: var(--white);
-      }
-      .circle-top{
-        width: 180px;
-        height: 180px;
-        margin-top: 1rem;
-        border-radius: 50%;
-        border: none;
-        background: linear-gradient(135deg, #fff, #e224f3);
-        color: white;
-        font-size:1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;
-        text-align: center;
-      }
+    
 
-      .circle-btn {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        border: none;
-        background: linear-gradient(135deg, #fff, #e224f3);
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-        cursor: pointer;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;
-      }
 
-      /* Shake animation */                                        
-      @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        20%, 60% { transform: translateX(-10px); }
-        40%, 80% { transform: translateX(10px); }
-      }
-      @media(min-width:1200px){
-        .circle-section{
-          border-radius:70%;
-        }
-        .circle-btn{
-          box-shadow:0px 3px 8px #fff;
-        }
-      }
-
-      .shake {
-        animation: shake 0.8s ease;
-      }
-
-      /* Hover effect */
-      .circle-btn:hover {
-        transform: scale(1.05);
-      }
-
-      .check-materials h2 {
-        color: #e224f3;
-        border-top: 3px dashed #000;
-        padding-top: 15px;
-        text-align: center;
-      }
-
-      .check-materials p {
-        text-align: center;
-      }
-    </style>
 
     <script>
       const circleBtn = document.getElementById('materialBtn');
