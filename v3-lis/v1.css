@@ -262,7 +262,11 @@ button:hover{
 
 /* ====================== Specific styles =================== */
 
-
+.next_btn{
+    background-color: #e224f3;
+    color:#fff
+    
+}
 .btn-primary,
 .btn-secondary {
   padding: 0.8rem 1.5rem;
