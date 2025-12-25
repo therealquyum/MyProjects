@@ -99,7 +99,28 @@
   
   <section id="hero" class="hero">
     <div class="container">
-      <h1>"Empower Your Learning Journey" 
+      
+      <h1 id="type-text"></h1>
+      
+      <script>
+  const text = "Welcome to V3 LIS Resource Hub Powered by Sen. Adeyemi Quyum Adekunle.";
+  const speed = 80; // typing speed in milliseconds
+  let index = 0;
+
+  function typeEffect() {
+    if (index < text.length) {
+      document.getElementById("type-text").textContent += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, speed);
+    }
+  }
+
+  // Start typing when page loads
+  window.onload = typeEffect;
+</script>
+      
+      <script scr="script.js"></script>
+      <!--  <h1>"Empower Your Learning Journey" 
        with <a href="https://wa.me/2349063632057" target="_blank"><span style="text-decoration:underline; color: #e224f3;">Sen.Quyum Adekunle Adeyemi</span></a> and LIS Executives.
       </h1>
       <!-- <p>
@@ -404,6 +425,8 @@
   <section class="back_to-top">
     <a href="#top">BACK TO TOP</a>
   </section>
+  
+  <script src="script.js"></script>
 </main>
   
   
