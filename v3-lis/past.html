@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past Questions</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f2f2f2;
+  }
+
+  header {
+    background: #e224f3;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  #app {
+    padding: 15px;
+  }
+
+  .card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.08);
+    cursor: pointer;
+  }
+
+  .card:hover {
+    background: #f0eaff;
+  }
+
+  .back {
+    margin-bottom: 15px;
+    color: #5a2ea6;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  a.card {
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+</style>
+</head>
+
+<body>
+
+<header>Past Questions</header>
+<main id="app"></main>
+
+<script>
+/* ========= DATA ========= */
+const data = {
+  "100 Level": {
+    "First Semester": {
+      "GST101": "assets/past-questions/100/first/GST101.pdf",
+      "LIS101": "assets/past-questions/100/first/LIS101.pdf"
+    },
+    "Second Semester": {
+      "GST102": "assets/past-questions/100/second/GST102.pdf"
+    }
+  },
+
+  
+  "200 Level": {
+    "First Semester": {
+      "LIS 313": "doc/lis 313 n1.pdf"
+    },
+    "Second Semester": {}
+  },
+  
+  "300 Level": {
+    "First Semester": {
+      "LIS301": "assets/past-questions/300/first/LIS301.pdf"
+    },
+    "Second Semester": {}
+  },
+
+  "400 Level": {
+    "First Semester": {},
+    "Second Semester": {}
+  }
+};
+
+const app = document.getElementById("app");
+
+/* ========= HELPERS ========= */
+function clearApp() {
+  app.innerHTML = "";
+}
+
+function createBackButton(handler) {
+  const back = document.createElement("div");
+  back.className = "back";
+  back.textContent = "← Back";
+  back.onclick = handler;
+  app.appendChild(back);
+}
+
+/* ========= SCREENS ========= */
+function showLevels() {
+  clearApp();
+
+  Object.keys(data).forEach(level => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.textContent = level;
+    card.onclick = () => showSemesters(level);
+    app.appendChild(card);
+  });
+}
+
+function showSemesters(level) {
+  clearApp();
+  createBackButton(showLevels);
+
+  Object.keys(data[level]).forEach(semester => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.textContent = semester;
+    card.onclick = () => showCourses(level, semester);
+    app.appendChild(card);
+  });
+}
+
+function showCourses(level, semester) {
+  clearApp();
+  createBackButton(() => showSemesters(level));
+
+  const courses = data[level][semester];
+  const keys = Object.keys(courses);
+
+  if (keys.length === 0) {
+    const empty = document.createElement("div");
+    empty.className = "card";
+    empty.textContent = "No past questions available yet.";
+    app.appendChild(empty);
+    return;
+  }
+
+  keys.forEach(course => {
+    const link = document.createElement("a");
+    link.className = "card";
+    link.textContent = course + " – View Past Questions";
+    link.href = courses[course];
+    link.target = "_blank";
+    app.appendChild(link);
+  });
+}
+
+/* ========= START ========= */
+showLevels();
+</script>
+
+</body>
+</html>

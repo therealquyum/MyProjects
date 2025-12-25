@@ -201,7 +201,9 @@ p{
     border-radius: 16px;
     padding:1rem;
 }
-
+.maintainance{
+    background-color: #e224f3
+}
 
 p:hover{
   color: var(--team-color);
