@@ -2,6 +2,21 @@
 <html lang="en">
 <head>
   <style>
+    .get_intouch{
+        text-align:center;
+       line-height:3rem
+    }
+    
+    .get_intouch-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        justify-items:center;
+        gap:40px;
+    }
+    .get_intouch-grid a{
+        display:grid;
+        place-items:center;
+    }
     
     .read_now{
         background:linear-gradient(#fff,black);
@@ -243,7 +258,7 @@ function typeEffect() {
 
   </div>
              <p>Read like a pro.....!</p>   
-  
+       
   
        <!--<div class="hero-content">
     <p>Meet our dedicated stakeholders shaping the future of LIS</p>
@@ -364,7 +379,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
          <section class="read_now">
              <div class="container">
-             <h3>One click away!!!</h3>
+                 
+                 <div class="get_intouch">
+           <h4>Get In touch</h4>
+           <div class="get_intouch-grid">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+<a href="https://wa.me/2349063632057"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.instagram.com/therealquyum"><i class="fab fa-instagram"></i></a>
+<a href="https://www.tiktok.com/therealquyum"><i class="fab fa-tiktok"></i></a>
+               
+           </div>
+       </div>
+             <h3>One click away !!!</h3>
 
                <button class="circle-top" id="materialBtn">
             Read Now !!! <i class="fa-solid fa-chevron-right"></i>
