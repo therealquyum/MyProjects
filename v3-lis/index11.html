@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sen.Quyum Academic Inovation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta property="og:title" content="Study Smarter: All Your Study Materials, Past Questions & Lecturers in One Place. Noted: If you cant find the materials you need dm (09063632057) so as to update it to the platform ASAP. ">
+  
+  
+  
+  <!--<meta property="og:title" content=" Click on this link to find and read any LIS materials of your choice across all level (100l- 400l) --- Sen Quyum wish everyone success in  all our examinations-->
+  
+  
+  <!-- ======= Link preview description ==== -->
+  
+<meta property="og:description" content="Locate well-organized course materials, stay academically ahead, and explore resources curated to support every Library and Information Science student. Powered by Sen. Adeyemi Quyum Adekunle. Dm-- https://wa.me/2349063632057">
+  
+    
+  
+  
+  <!-- ====== the link preview image ====-->
+
+<meta property="og:image" content="https://v3-lis.netlify.app/images/pr.jpg">
+<meta property="og:url" content="https://v3-lis.netlify.app">
+<meta property="og:type" content="website">
+  
+  
+
+
+  <style>
+    /* BODY */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4b0082, #800080);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* CONTAINER CARD */
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      margin-bottom: 50px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid purple;
+      margin-bottom: 10px;
+    }
+
+    .profile-label {
+      font-size: 14px;
+      color: black;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    h2 {
+      color: purple;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: black;
+      font-size: 14px;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 1s ease 0.5s forwards;
+    }
+
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* LABEL AND INPUT */
+    label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: purple;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus { border: 2px solid purple; }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: purple;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover { background: black; }
+    button:active { transform: scale(0.98); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      position: relative;
+      margin-top: 20px;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    /* MOSQUE IMAGE ANIMATION */
+    .mosque {
+      width: 140px;
+      display: block;
+      margin: 0 auto;
+      animation: bounceMosque 2s infinite ease-in-out;
+    }
+
+    @keyframes bounceMosque {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* HAPPY RAMADAN TEXT ANIMATION */
+    .happy-text {
+      margin-top: 10px;
+      font-size: 30px;
+      color: #FFD700;
+      font-weight: bold;
+      animation: floatGlow 3s infinite ease-in-out;
+    }
+
+    @keyframes floatGlow {
+      0%, 100% { transform: translateY(0); color: #FFD700; text-shadow: 0 0 5px #FFD700; }
+      25% { transform: translateY(-5px); color: #FFEC8B; text-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500; }
+      50% { transform: translateY(-10px); color: #FFC300; text-shadow: 0 0 20px #FFD700, 0 0 35px #FFA500; }
+      75% { transform: translateY(-5px); color: #FFEC8B; text-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img src="images/quyum.jpg" alt="Senator Adeyemi Quyum Adekunle Profile Picture" class="profile-pic">
+    <div class="profile-label">Sen. Adeyemi Quyum Adekunle</div>
+
+    <h2>LIS Departmental Academic Resource Portal</h2>
+    <p class="subtitle">
+      In the stewardship of knowledge lies the power to transform minds, preserve history, and illuminate the future. 
+      This portal stands as a gateway to research, discovery, and academic excellence.
+    </p>
+
+    <!-- Label + Input -->
+    <label for="username">Student's Name</label>
+    <input type="text" id="username" placeholder="Enter your name, Custodian of Knowledge" aria-label="Your Name">
+    <button onclick="saveName()">Continue</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="images/mq.jpeg" alt="Ramadan mosque icon" class="mosque">
+    <h3 class="happy-text">Happy Ramadan Mubarak</h3>
+  </footer>
+
+  <script>
+    function saveName() {
+      let name = document.getElementById("username").value.trim();
+      if (!name) { alert("Please enter your name"); return; }
+      localStorage.setItem("studentName", name);
+      window.location.href = "main.html";
+    }
+
+    // Enter key support
+    document.getElementById("username").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") saveName();
+    });
+  </script>
+
+
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker Registered ✅"))
+      .catch(err => console.log("Registration failed ❌", err));
+  });
+}
+</script>
+
+<body>
+
+  <!-- Your content -->
+  <button id="installBtn" style="display:none;">Install App</button>
+
+  <script>
+    let deferredPrompt;
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const installBtn = document.getElementById("installBtn");
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.style.display = "block";
+      });
+
+      installBtn.addEventListener("click", () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+        }
+      });
+    });
+
+    window.addEventListener("appinstalled", () => {
+      document.getElementById("installBtn").style.display = "none";
+    });
+  </script>
+
+</body>
+
+
+
+</body>
+</html>

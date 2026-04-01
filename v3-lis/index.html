@@ -1,253 +1,748 @@
-<!DOCTYPE html>
-<html>
+o<oo86!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Sen.Quyum Academic Inovation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta property="og:title" content="Study Smarter: All Your Study Materials, Past Questions & Lecturers in One Place. Noted: If you cant find the materials you need dm (09063632057) so as to update it to the platform ASAP. ">
-  
-  
-  
-  <!--<meta property="og:title" content=" Click on this link to find and read any LIS materials of your choice across all level (100l- 400l) --- Sen Quyum wish everyone success in  all our examinations-->
-  
-  
-  <!-- ======= Link preview description ==== -->
-  
-<meta property="og:description" content="Locate well-organized course materials, stay academically ahead, and explore resources curated to support every Library and Information Science student. Powered by Sen. Adeyemi Quyum Adekunle. Dm-- https://wa.me/2349063632057">
-  
-    
-  
-  
-  <!-- ====== the link preview image ====-->
-
-<meta property="og:image" content="https://v3-lis.netlify.app/images/pr.jpg">
-<meta property="og:url" content="https://v3-lis.netlify.app">
-<meta property="og:type" content="website">
-  
-  
-
-
   <style>
-    /* BODY */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #4b0082, #800080);
-      display: flex;
-      flex-direction: column;
+    
+    
+     Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 320px;
+  animation: popIn 0.3s ease;
+}
+
+.modal-content h3 {
+  color: purple;
+}
+    
+    .modal-content h3 {
+  color: purple;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: purple;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: black;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+
+.update-slider {
+  width: 100%;
+  max-width: 600px;
+  height: 60px;
+  overflow: hidden;
+  background: #0d6efd;
+  color: white;
+  border-radius: 8px;
+  margin: 20px auto;
+}
+
+.slides {
+  display: flex;
+  width: 400%; /* 100% × number of slides */
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+    
+    
+    .get_intouch{
+        text-align:center;
+       line-height:3rem
+    }
+    
+    .get_intouch-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        justify-items:center;
+        gap:40px;
+    }
+    .get_intouch-grid a{
+        display:grid;
+        place-items:center;
+    }
+    
+    .read_now{
+        background:linear-gradient(#fff,black);
+       /* border:1px solid red;*/
+        border-radius:20px 20px 0px 0px;
+    }
+    .read_now .container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+    }
+        .read_now p{
+        text-align:center;
+    }
+    .read_now h3{
+        color:white;
+        font-size:2rem;
+        text-align:center;
+    }
+    
+    .read_now button{
+       margin-bottom:2rem;
+    }
+  .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      overflow-x: hidden;
+      z-index: 9999;
     }
 
-    /* CONTAINER CARD */
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
+    .popup-content {
+      background: #fff;
+      padding: 20px;
       text-align: center;
+      border-radius: 15px;
       width: 90%;
       max-width: 350px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      margin-bottom: 50px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    .profile-pic {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid purple;
+    .popup-content h2 {
+      color: #e224f3;
       margin-bottom: 10px;
     }
 
-    .profile-label {
-      font-size: 14px;
-      color: black;
+    .popup-content p {
+      color: green;
       margin-bottom: 20px;
-      font-weight: bold;
+      background-color:#e224f3;
+        padding:0 10px;
     }
 
-    h2 {
-      color: purple;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: black;
-      font-size: 14px;
-      margin-bottom: 25px;
-      line-height: 1.5;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: slideUp 1s ease 0.5s forwards;
-    }
-
-    @keyframes slideUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* LABEL AND INPUT */
-    label {
-      display: block;
-      text-align: left;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: purple;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      outline: none;
-      font-size: 14px;
-    }
-
-    input:focus { border: 2px solid purple; }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: purple;
+    .popup-content a {
+      background-color: #e224f3;
       color: white;
-      border: none;
+      padding: 10px 20px;
       border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+      text-decoration: none;
       transition: 0.3s;
     }
 
-    button:hover { background: black; }
-    button:active { transform: scale(0.98); }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      color: white;
-      font-family: Arial, sans-serif;
-      position: relative;
-      margin-top: 20px;
-      height: 200px;
-      overflow: hidden;
+    .popup-content a:hover {
+      background-color: #0056b3;
     }
 
-    /* MOSQUE IMAGE ANIMATION */
-    .mosque {
-      width: 140px;
+    .close-btn {
       display: block;
-      margin: 0 auto;
-      animation: bounceMosque 2s infinite ease-in-out;
+      margin-top: 15px;
+      color: #999;
+      cursor: pointer;
     }
+    
+    .hero {
+  position: relative;
+  height: 30vh;
+  overflow: hidden;
+  color: #fff;
+}
 
-    @keyframes bounceMosque {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-    /* HAPPY RAMADAN TEXT ANIMATION */
-    .happy-text {
-      margin-top: 10px;
-      font-size: 30px;
-      color: #FFD700;
-      font-weight: bold;
-      animation: floatGlow 3s infinite ease-in-out;
-    }
+.hero-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
 
-    @keyframes floatGlow {
-      0%, 100% { transform: translateY(0); color: #FFD700; text-shadow: 0 0 5px #FFD700; }
-      25% { transform: translateY(-5px); color: #FFEC8B; text-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500; }
-      50% { transform: translateY(-10px); color: #FFC300; text-shadow: 0 0 20px #FFD700, 0 0 35px #FFA500; }
-      75% { transform: translateY(-5px); color: #FFEC8B; text-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500; }
-    }
+.hero-slider img.active {
+  opacity: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 45%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+  .header-greeting p{
+   text-align:center;   
+      
+ }  
+    
+    /* Horizontal scrollable buttons */
+.button-row {
+  display: flex;
+  gap: 10px;               /* spacing between buttons */
+  overflow-x: auto;        /* enable horizontal scroll if overflow */
+  padding: 10px 0;
+  margin-bottom: 20px;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+/* Hide default scrollbar (optional) */
+.button-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.button-row::-webkit-scrollbar-thumb {
+  background: purple;
+  border-radius: 3px;
+}
+
+.button-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Buttons inside row */
+.button-row button {
+  flex: 0 0 auto; /* prevent shrinking */
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: purple;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button-row button:hover {
+  background: black;
+}
+    
+  
   </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <!--link preview -->
+  
+    
+  <!--======== web title ======-->
+  <title>LIS Course Materials </title>
+  <!-- == CSS and FONT-AWESOME LINK ==-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="v1.css"> 
+</head>
+
+
+
+<!== THE BODY OF THE WEBSITE STARTED HERE G->
+<body>
+<!-- =========The header section============== -->
+<header>
+ <div class="container">
+    <div class="logo">
+      <a href="https://v4.tasued.edu.ng" target="_blank"><img src="images/tasued.jpeg" alt="tasued logo"></a>
+      <h2> Tasued <span style="color:#fff">
+          <abbr title="Library and Information Science">LIS</abbr>
+        </span> <i class="fa-solid fa-book"></i> Materials For All Levels .... </h2>
+    </div>
+    
+     
+     
+    
+    <!-- ========= Navigation links ========-->
+    <nav>
+     <ul class="nav-links">
+        <li><a href="materials.html">View Materials</a></li>
+      <li><a href="lis lecturers.html">Lecturers</a></li> <li><a href="past.html"> Past Questions</a></li>
+        <li><a href="#author">Author/Contact</a></li><li><a href="#project">Quyum's Projects</a></li></ul>
+     </nav>
+    <!--HAMBURGER MENU TOGGLE-->
+    <button class="menu-toggle" aria-label="toggle-menu">&#9776;</button> </div>
+
+  
+    
+    
+    
+ <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>  
+  <h5 id="greeting" style="
+  background: purple;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  margin: 0;
+"></h5>
+
+<script>
+  let name = localStorage.getItem("studentName");
+
+  if (!name) {
+    window.location.href = "index.html";
+  }
+
+  let hour = new Date().getHours();
+  let greetingText = "";
+
+  if (hour < 12) {
+    greetingText = "Good Morning";
+  } else if (hour < 18) {
+    greetingText = "Good Afternoon";
+  } else {
+    greetingText = "Good Evening";
+  }
+
+  document.getElementById("greeting").innerHTML =
+    greetingText + ", " + name + " 👋";
+</script>
+      
+<!-- Scrollable button container -->
+<div class="button-row">
+  <button onclick="window.location.href='materials.html'">View Materials</button>
+  <button onclick="window.location.href='lis lecturers.html'">Meet Lecturers</button>
+  <button onclick="window.location.href='past.html'">Past Question</button>
+  <button onclick="showMaintenance()" >Get Tutor</button>
+  <button onclick="showMaintenance()">Time Table</button>
+    
+    <button onclick="showMaintenance()">Research</button>
+    
+</div>
+      
+</header>
+  
+  
+  
+  
+  
+ 
+  <!--======MAIN WEB BEGINS HERE========-->
+<main id="top">
+  <!-- ======== HERO SECTION =========-->
+     <section id="hero" class="hero">
+   <div class="container">
+     <h1 class="gradient-text" id="type-text"></h1>
+         
+      <script>
+  const text = "Welcome to V3 LIS Resource Hub Powered by Sen. Adeyemi Quyum Adekunle.";
+  const speed = 20; // typing speed in milliseconds
+  let index = 0;
+function typeEffect() {
+    if (index < text.length) {
+      document.getElementById("type-text").textContent += text.charAt(index);
+      index++;
+      setTimeout(typeEffect, speed);
+    }
+}// Start typing when page loads
+  window.onload = typeEffect;
+</script>
+      
+
+       
+     
+      <div class="hero-slider">
+    <img src="images/" class="slide active" alt="Stakeholder 1">
+                    
+<img src="images/quyum.jpg" class="slide" alt="Stakeholder 4">
+    <img src="images/oshi.jpg" class="slide" alt="Stakeholder 2">
+    <img src="images/awodoyin.jpg" class="slide" alt="Stakeholder 3">
+    <img src="images/simisaye.jpg" class="slide" alt="Stakeholder 4">
+          <img src="images/olutoki.jpg" class="slide" alt="Stakeholder 4">
+          
+<img src="images/afolabi.jpg" class="slide" alt="Stakeholder 4">
+
+  </div>
+             <p>Read like a pro.....!</p>   
+       
+  
+       <!--<div class="hero-content">
+    <p>Meet our dedicated stakeholders shaping the future of LIS</p>
+  </div>-->
+  
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+  
+  function showNextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
+  
+  setInterval(showNextSlide, 4000); // change every 2 seconds
+</script>
+      
+      
+   </div>
+
+     
+     
+          </section>
+     <!-- 
+     <
+                
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Auto Sliding Update</title>
+
+<style>
+  .update-slider {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f5f5f5;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    background: #eee;
+  }
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <img src="images/quyum.jpg" alt="Senator Adeyemi Quyum Adekunle Profile Picture" class="profile-pic">
-    <div class="profile-label">Sen. Adeyemi Quyum Adekunle</div>
-
-    <h2>LIS Departmental Academic Resource Portal</h2>
-    <p class="subtitle">
-      In the stewardship of knowledge lies the power to transform minds, preserve history, and illuminate the future. 
-      This portal stands as a gateway to research, discovery, and academic excellence.
-    </p>
-
-    <!-- Label + Input -->
-    <label for="username">Student's Name</label>
-    <input type="text" id="username" placeholder="Enter your name, Custodian of Knowledge" aria-label="Your Name">
-    <button onclick="saveName()">Continue</button>
+<div class="update-slider">
+  <div class="slides" id="slides">
+    <div class="slide">📢 New lecture materials uploaded</div>
+    <div class="slide">🗓️ Test scheduled for Friday</div>
+    <div class="slide">📚 Past questions now available</div>
+    <div class="slide">⚡ Website updated with new features</div>
   </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <img src="images/mq.jpeg" alt="Ramadan mosque icon" class="mosque">
-    <h3 class="happy-text">Happy Ramadan Mubarak</h3>
-  </footer>
-
-  <script>
-    function saveName() {
-      let name = document.getElementById("username").value.trim();
-      if (!name) { alert("Please enter your name"); return; }
-      localStorage.setItem("studentName", name);
-      window.location.href = "main.html";
-    }
-
-    // Enter key support
-    document.getElementById("username").addEventListener("keypress", function(e) {
-      if (e.key === "Enter") saveName();
-    });
-  </script>
-
-
+</div>
 
 <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("service-worker.js")
-      .then(() => console.log("Service Worker Registered ✅"))
-      .catch(err => console.log("Registration failed ❌", err));
-  });
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.getElementById("slides");
+  const slideCount = slides.children.length;
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % slideCount;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }, 3000);
+});
 </script>
 
-<body>
-
-  <!-- Your content -->
-  <button id="installBtn" style="display:none;">Install App</button>
-
-  <script>
-    let deferredPrompt;
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const installBtn = document.getElementById("installBtn");
-
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        installBtn.style.display = "block";
-      });
-
-      installBtn.addEventListener("click", () => {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-        }
-      });
-    });
-
-    window.addEventListener("appinstalled", () => {
-      document.getElementById("installBtn").style.display = "none";
-    });
-  </script>
-
 </body>
+</html>     
+     </section>
 
+  <section class="hero">
+  <div class="hero-slider">
+    <img src="images/img1.jpg" class="slide active" alt="Stakeholder 1">
+    <img src="images/img2.jpg" class="slide" alt="Stakeholder 2">
+    <img src="images/stakeholder3.jpg" class="slide" alt="Stakeholder 3">
+    <img src="images/stakeholder4.jpg" class="slide" alt="Stakeholder 4">
+  </div>
+  
+  <div class="hero-content">
+         <h1 class="gradient-text" id="type-text"></h1>
+    <p>Meet our dedicated stakeholders shaping the future of LIS</p>
+  </div>
+  
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+  
+  function showNextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
+  
+  setInterval(showNextSlide, 2000); // change every 2 seconds
+</script>
+      
+      
+      
+  
+</section>-->
 
+         <section class="read_now">
+             <div class="container">
+                 
+                 <div class="get_intouch">
+           <h4>Get In touch</h4>
+           <div class="get_intouch-grid">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+<a href="https://wa.me/2349063632057"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.instagram.com/therealquyum"><i class="fab fa-instagram"></i></a>
+<a href="https://www.tiktok.com/therealquyum"><i class="fab fa-tiktok"></i></a>
+               
+           </div>
+       </div>
+             <h3>One click away !!!</h3>
 
+               <button class="circle-top" id="materialBtn">
+            Read Now !!! <i class="fa-solid fa-chevron-right"></i>
+            <!--Read Now !! <i class="fa-solid fa-chevron-up"></i>-->
+      </button>
+                 <p>Instant access of all LIS. course materials with a single click.</p>
+                 </div>
+             </section>
+  
+  
+  
+  
+      <section class="other-services">
+        <div class="container">
+          <h2>More Services <br> <i class="fa-solid fa-chevron-down"></i></h2>
+           <div class="group-buttons">
+  <button onclick="window.location.href='lis lecturers.html'">Lis Lecturers</button>
+  <button  onclick="window.location.href='past.html'">Past Questions</button>
+  <button onclick="showPopup()">Special Materials</button>
+  <button onclick="showPopup()" >Get a tutor</button>
+  <button onclick="showPopup()">Hand book</button>
+  <button onclick="showPopup()">Time tables</button>
+</div> </div>
+  </section>
+  
+     
+     
+  
+  <!-- =================== CIRCLE BUTTON SECTION ======================== -->
+  <section class="check-materials" id="materials">
+    <h2>Motivational Qoutes</h2>
+    <p>Get Motivated by Some powerful Qoutes Made Available to
+      you by Senator Adeyemi Quyum Adekunle.... .</p>
+      
+      
+      
+
+    <div class="circle-section">
+      <h2>1</h2>
+         <h3>`Always  remember that "Success" is very  difficult to achieve most 
+          expecially at your "Comfort zone".`
+        </h3>
+        <button id="next_btn">Next</button>
+    </div> <script>
+      const circleBtn = document.getElementById('materialBtn');   // Detect when the circle enters the viewport
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            circleBtn.classList.add('shake');
+            setTimeout(() => {
+              circleBtn.classList.remove('shake');
+            }, 1000);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(circleBtn);
+
+      // Redirect when clicked
+      circleBtn.addEventListener('click', () => {
+        window.location.href = "materials.html";
+      });
+    </script>
+    
+     
+       <!--======================= CONTACT SECTION ============================-->
+ <section id="author" class="contact">
+     <h2 class="contact-h2">Meet!! Sen. Adeyemi Quyum Adekunle</h2>
+     <div class="image-container">
+      <img src="images/quyum.jpg" alt="Sen Quyum" /></div>
+     
+     
+     
+     
+     <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p> <i class="fa-solid fa-phone"></i>:<strong>Telephone:</strong>09063632057</p><p>  <i class="fa-solid fa-paper-plane"></i><strong>Email:</strong> <a href="mailto:abdulqoyum246@gmail.com">abdulqoyum246@gmail.com</a>  </p>  <a href="https://wa.me/2349063632057"target="_blank" class="message-btn">Message Me <i class="fa-solid fa-comment-dots"></i></a> </div> </div>
+     
+    
+      <!-- ============ CONTACT FORM ===================-->
+      <form action="#" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="telephone" placeholder="Your Phone Number" required>
+        <textarea name="message" placeholder="Your Message Here" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+  </section>
+    
+    
+  <section class="back_to-top">
+    <a href="#top">BACK TO TOP</a>
+  </section>
+  <script src="script.js"></script>
+</main>
+  
+
+<!-- ================== FOOTER =====================-->
+<footer>
+  <div class="container footer-container">
+    <p>&copy; 2025 LIS Course Program. All rights reserved.</p>
+      <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Services</a></li>
+    </ul> 
+  </div>
+</footer>    
+         
+<!-- Maintenance Modal -->
+<div id="maintenanceModal" class="modal">
+  <div class="modal-content">
+    <h3>🚧 Page Under Maintenance</h3>
+    <p style="color:black">This section is still under development. Please check back soon.</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+         
+         <script>    
+function showMaintenance() {
+  document.getElementById("maintenanceModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("maintenanceModal").style.display = "none";
+}
+         
+         </script>
+         
+   <!-- ================  THE END =============-->
 </body>
 </html>
+     
+     
+     
+      <!--  <h1>"Empower Your Learning Journey" 
+       with <a href="https://wa.me/2349063632057" target="_blank"><span style="text-decoration:underline; color: #e224f3;">Sen.Quyum Adekunle Adeyemi</span></a> and LIS Executives.
+      </h1>
+      <!-- <p>
+        This website is mainly for LIS department students to access their course materials easily
+        and enhance their academic performance. It covers all 100L to 400L course materials,
+        including past questions.
+      </p> -->
+      
+        <!-- <p><a href="materials.html" class="back-btn"> <i class="fa-solid fa-chevron-up"></i> <br> Just one tap</a></p>
+      </div>
+
+      <div class="hero-buttons">
+        
+                      <a class="btn-primary" onclick="showPoup()">Lis Student Executives <i class="fa-solid fa-chevron-right"></i></a>
+        <a class="btn-primary" href="lis lecturers.html">Meet Lecturers <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+      
+      <!-- <div class="container">
+        <img src="hero_image.jepeg" alt="hero image">
+      </div> -->
+    
+    
+    
+
+
+  <!-- =========== other resources ============================= 
+  <section id="pq" class="course-material">
+    <div class="container">
+      <h2>Check Other Resources made availabe for you. <br><i class="fa-solid fa-arrow-down"></i></h2>
+      <div class="materials-grid">
+        <div class="material-box">
+          <h3>LIS Past Exam Questions</h3>
+          <p>Click the button below to view past questions From 100 - 400 level</p>
+         <button class="view-btn" onclick="window.location.href='past.html'">
+  <i class="fa-solid fa-eye"></i> View
+</button>
+          </div>
+        </div>
+
+        <div class="material-box">
+          <h3>Online Resources</h3>
+          <p>Click the button below to view </p>
+         <button class="view-btn"onclick="showPopup()">
+  <i class="fa-solid fa-eye"></i> View
+</button>
+        </div>
+
+        <div class="material-box">
+          <h3>Jornals</h3>
+          <p>Click the button below to view online Jornals</p>
+     <button class="view-btn"onclick="showPopup()">
+  <i class="fa-solid fa-eye"></i> View
+</button>
+        </div>
+
+        <div class="material-box">
+          <h3>Databases</h3>
+          <p>Click the button below to view </p>
+        <button class="view-btn"onclick="showPopup()">
+  <i class="fa-solid fa-eye"></i> View
+</button>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+    
+    
